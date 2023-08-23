@@ -40,22 +40,18 @@ function menuYapici(menuElemanlari) {
   div.setAttribute("class", "menu");
 
   const ul = document.createElement("ul");
-
-  const li = document.createElement("li");
-  li.textContent = menuElemanlari[0];
-  const li2 = document.createElement("li");
-  li2.textContent = menuElemanlari[1];
-  const li3 = document.createElement("li");
-  li3.textContent = menuElemanlari[2];
-  const li4 = document.createElement("li");
-  li4.textContent = menuElemanlari[3];
-  const li5 = document.createElement("li");
-  li5.textContent = menuElemanlari[4];
-  const li6 = document.createElement("li");
-  li6.textContent = menuElemanlari[5];
-
+  menuElemanlari.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    ul.append(li);
+  });
   div.append(ul);
-  ul.append(li);
 
+  const menubutton = document.querySelector(".menu-button");
+  menubutton.addEventListener("click", (event) => {
+    div.classList.toggle("menu--open");
+  });
   return div;
 }
+const header = document.querySelector(".header");
+header.append(menuYapici(menuElemanlari));

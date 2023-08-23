@@ -141,7 +141,7 @@ function haberYapici(data) {
   btn.textContent = "+";
 
   btn.addEventListener("click", (event) => {
-    event.classList.toggle("article-open");
+    event.target.parentElement.classList.toggle("article-open");
   });
 
   haberDiv.append(h);
@@ -152,4 +152,9 @@ function haberYapici(data) {
   haberDiv.append(btn);
 
   return haberDiv;
+}
+const articles = document.querySelector(".articles");
+for (let veri of data) {
+  const haber = haberYapici(veri);
+  articles.append(haber);
 }
