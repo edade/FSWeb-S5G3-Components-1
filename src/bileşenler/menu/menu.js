@@ -34,3 +34,28 @@ let menuElemanlari = [
 
   Adım 6: 'menuYapici' fonksiyonunu ve 'menuElemanlari' dizisini kullanarak menüyü oluşturun, ve döndürülen menüyü header'e ekleyin.
 */
+
+function menuYapici(menuElemanlari) {
+  const div = document.createElement("div");
+  div.setAttribute("class", "menu");
+
+  const ul = document.createElement("ul");
+
+  const li = document.createElement("li");
+  li.textContent = menuElemanlari[0];
+  const li2 = document.createElement("li");
+  li2.textContent = menuElemanlari[1];
+  const li3 = document.createElement("li");
+  li3.textContent = menuElemanlari[2];
+  const li4 = document.createElement("li");
+  li4.textContent = menuElemanlari[3];
+  const li5 = document.createElement("li");
+  li5.textContent = menuElemanlari[4];
+  const li6 = document.createElement("li");
+  li6.textContent = menuElemanlari[5];
+
+  div.append(ul);
+  ul.append(li);
+
+  return div;
+}
